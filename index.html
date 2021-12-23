@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>进制转换器的设计</title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="./css/index.css">
+		<script src="./js/v2.6.10/vue.js"></script>
+	</head>
+	<body>
+		<h3>我设计的进制转换器</h3>
+		<div class='red'></div>
+		<div id="app" class="w">
+			<!-- ls start -->
+			<div class="ls">
+				<h5>实现转二进制</h5>
+				<div class="bred"></div>
+				<ul>
+					<li>十进制转二进制</li>
+					<li>数值： <input type="text" v-model="input1"></li>
+					<li>结果： <span>{{result1}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>十六进制转二进制</li>
+					<li>数值： <input type="text" v-model="input2"></li>
+					<li>结果： <span>{{result2}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>八进制转二进制</li>
+					<li>数值： <input type="text" v-model="input3"></li>
+					<li>结果： <span>{{result3}}</span></li>
+				</ul>
+			</div>
+			<!-- ls end-->
+			<!-- rs start -->
+			<div class="rs">
+				<h5>实现转十进制</h5>
+				<div class="bred"></div>
+				<ul>
+					<li>二进制转十进制</li>
+					<li>数值：<input type="text" v-model="input4"></li>
+					<li>结果：<span>{{result4}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>十六进制转十进制</li>
+					<li>数值：<input type="text" v-model="input5"></li>
+					<li>结果：<span>{{result5}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>八进制转十进制</li>
+					<li>数值：<input type="text" v-model="input6"></li>
+					<li>结果：<span>{{result6}}</span></li>
+				</ul>
+			</div>
+			<!-- rs end -->
+			
+			<!-- lx start -->
+			<div class="lx">
+				<h5>实现转十六进制</h5>
+				<div class="bred"></div>
+				<ul>
+					<li>十进制转十六进制</li>
+					<li>数值： <input type="text" v-model="input7"></li>
+					<li>结果： <span>{{result7}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>二进制转十六进制</li>
+					<li>数值： <input type="text" v-model="input8"></li>
+					<li>结果： <span>{{result8}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>八进制转十六进制</li>
+					<li>数值： <input type="text" v-model="input9"></li>
+					<li>结果： <span>{{result9}}</span></li>
+				</ul>
+			</div>
+			<!-- lx end -->
+			
+			<!-- rx start -->
+			<div class="rx">
+				<h5>实现转八进制</h5>
+				<div class="bred"></div>
+				<ul>
+					<li>十进制转八进制</li>
+					<li>数值： <input type="text" v-model="input10"></li>
+					<li>结果： <span>{{result10}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>十六进制转八进制</li>
+					<li>数值： <input type="text" v-model="input11"></li>
+					<li>结果： <span>{{result11}}</span></li>
+				</ul>
+				<div class="bred"></div>
+				<ul>
+					<li>二进制转八进制</li>
+					<li>数值： <input type="text" v-model="input12"></li>
+					<li>结果： <span>{{result12}}</span></li>
+				</ul>
+			</div>
+			<!-- rx end -->
+		</div>
+		
+		<script type="text/javascript">
+		      var vm = new Vue({
+		         el: '#app',
+		         data: {
+		            input1: '0',
+		            input2: '0',
+		            input3: '0',
+		            input4: '0',
+		            input5: '0',
+		            input6: '0',
+					input7: '0',
+					input8: '0',
+					input9: '0',
+					input10: '0',
+					input11: '0',
+					input12: '0',
+		         },
+		         computed: {
+					result1: function() {
+					   return (parseInt(this.input1)).toString(2);
+					},
+		            result2: function() {
+		               return (parseInt(this.input2, 16)).toString(2);
+		            },
+		            result3: function() {
+		               return (parseInt(this.input3, 8)).toString(2);
+		            },
+		            result4: function() {
+		               return parseInt(this.input4, 2);
+		            },
+		            result5: function() {
+		               return parseInt(this.input5, 16);
+		            },
+		            result6: function() {
+		               return parseInt(this.input6, 8);
+		            },
+					result7: function() {
+					      return (parseInt(this.input7)).toString(16);
+					},
+					result8: function() {
+					      return (parseInt(this.input8, 2)).toString(16);
+					},
+					result9: function() {
+					      return (parseInt(this.input9, 8)).toString(16);
+					},
+					result10: function() {
+					      return parseInt(this.input10).toString(8);
+					},
+					result11: function() {
+					      return (parseInt(this.input11, 16)).toString(8);
+					},
+					result12: function() {
+					      return (parseInt(this.input12, 2)).toString(8);
+					}
+		         }
+		      });
+		   </script>
+		</body>
+	</body>
+</html>
